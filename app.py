@@ -100,6 +100,23 @@ Why this timestamp:
     st.subheader("📌 Answer")
     st.markdown(response.text)
 
+    # Extract timestamp from Gemini response
+    match = re.search(r"(\d{1,2}:\d{2}:\d{2})", response.text)
+
+    if match:
+
+        timestamp = match.group(1)
+
+        seconds = timestamp_to_seconds(timestamp)
+
+        youtube_url = (
+            f"https://youtu.be/Rni7Fz7208c?t={seconds}"
+        )
+
+        st.markdown(
+            f"### 🎥 [Open Video at {timestamp}]({youtube_url})"
+        )
+
     with st.expander("📄 View Transcript Context"):
         st.text_area(
             "",
@@ -111,4 +128,6 @@ Why this timestamp:
 # Footer
 # ----------------------------
 st.markdown("---")
-st.caption("Built using FAISS + Sentence Transformers + Gemini")
+st.caption(
+    "Built using FAISS + Sentence Transformers + Gemini"
+)
