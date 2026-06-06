@@ -12,13 +12,13 @@ The system extracts YouTube subtitles, converts transcript chunks into vector em
 
 ## 🏗️ System Architecture
 
-![Architecture](assests/architecture_modern.png)
+![Architecture](assests/architecture.png)
 
 ---
 
 ## 📱 Application Demo
 
-![Application](assests/app_screenshot.png)
+![Application](assests/home.png)
 
 ---
 
@@ -122,9 +122,7 @@ podcast-qa-bot-rag/
 
 Project Report:
 
-```text
-docs/project_report.pdf
-```
+[View Project Report](docs/project_report.pdf)
 
 ---
 
