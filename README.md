@@ -1,107 +1,92 @@
-# 🎙️ Podcast Q&A Bot - Sportomic AI Lab Assignment
+# 🎙️ Podcast Q&A Bot
 
-## Overview
+AI-powered Retrieval-Augmented Generation (RAG) system that answers questions from podcast transcripts and returns relevant timestamps using semantic vector search and Google's Gemini 2.5 Flash.
 
-Podcast Q&A Bot is an AI-powered Retrieval-Augmented Generation (RAG) system that answers questions from the Elon Musk × Nikhil Kamath podcast and returns the most relevant timestamp discussed in the video.
+## 🚀 Overview
 
-The system extracts YouTube subtitles, converts them into searchable embeddings, stores them in a FAISS vector database, retrieves relevant transcript sections, and generates contextual answers using Google's Gemini 2.5 Flash model.
+Podcast Q&A Bot enables users to interact with long-form podcast content through natural language queries. Instead of manually searching through hours of audio, users can ask questions and instantly receive contextual answers along with the most relevant timestamp.
 
----
-
-## Problem Statement
-
-Build an intelligent podcast assistant capable of:
-
-* Understanding podcast content
-* Answering user questions
-* Returning relevant timestamps
-* Providing source transcript context
-
-Example:
-
-Question:
-What does Elon think about AI?
-
-Answer:
-Elon believes AI will significantly improve productivity and transform multiple industries, while emphasizing the importance of safety and regulation.
-
-Timestamp:
-01:14:52
+The system extracts YouTube subtitles, converts transcript chunks into vector embeddings, stores them in a FAISS vector database, retrieves semantically relevant content, and uses Gemini 2.5 Flash to generate grounded responses.
 
 ---
 
-## Features
+## 🏗️ System Architecture
 
-* Transcript extraction from YouTube
-* Automatic subtitle processing
-* Semantic search using vector embeddings
-* FAISS vector database
-* Gemini-powered answer generation
-* Timestamp retrieval
-* Interactive Streamlit UI
+![Architecture](assets/architecture_modern.png)
 
 ---
 
-## Tech Stack
+## 📱 Application Demo
 
-### AI & NLP
-
-* Sentence Transformers
-* Gemini 2.5 Flash
-* FAISS Vector Database
-
-### Backend
-
-* Python
-
-### Frontend
-
-* Streamlit
-
-### Data Processing
-
-* yt-dlp
-* VTT Subtitle Processing
+![Application](assets/app_screenshot.png)
 
 ---
 
-## Project Workflow
+## ✨ Features
+
+* Semantic search using FAISS
+* Retrieval-Augmented Generation (RAG)
+* Sentence Transformer embeddings
+* Gemini 2.5 Flash integration
+* Timestamp-aware question answering
+* Transcript-based answer grounding
+* Interactive Streamlit interface
+
+---
+
+## 🛠️ Tech Stack
+
+| Component             | Technology            |
+| --------------------- | --------------------- |
+| Programming Language  | Python 3.14           |
+| Frontend              | Streamlit             |
+| Embeddings            | Sentence Transformers |
+| Vector Database       | FAISS                 |
+| LLM                   | Gemini 2.5 Flash      |
+| Transcript Extraction | yt-dlp                |
+| Storage               | Pickle                |
+
+---
+
+## 🔄 Workflow
 
 1. Extract subtitles from YouTube using yt-dlp
-2. Clean VTT transcript data
+2. Clean and preprocess transcript data
 3. Generate embeddings using Sentence Transformers
 4. Store embeddings in FAISS
 5. Accept user query
-6. Perform semantic similarity search
+6. Perform semantic retrieval
 7. Retrieve relevant transcript chunks
 8. Generate answer using Gemini
 9. Return answer with timestamp
 
 ---
 
-## Folder Structure
+## 📂 Project Structure
 
-project/
+```text
+podcast-qa-bot-rag/
 
 ├── app.py
-
 ├── ingest.py
-
 ├── clean_vtt.py
-
 ├── transcript.txt
-
 ├── podcast.index
-
 ├── chunks.pkl
-
 ├── requirements.txt
+├── README.md
 
-└── README.md
+├── assets/
+│   ├── architecture_modern.png
+│   └── app_screenshot.png
+
+└── docs/
+    └── project_report.pdf
+```
 
 ---
 
-## Sample Questions
+## 💬 Sample Questions
 
 * What does Elon think about AI?
 * How should AI be regulated?
@@ -111,29 +96,41 @@ project/
 
 ---
 
-## Limitations
+## ⚠️ Limitations
 
 * Auto-generated subtitles may contain transcription errors.
-* Retrieval quality depends on chunk size.
-* Some answers may require larger context windows.
+* Retrieval quality depends on transcript chunking.
+* Some questions require larger context windows.
 * Timestamp accuracy depends on subtitle alignment.
-* Semantic retrieval may occasionally return adjacent topics.
+* Semantic retrieval may occasionally retrieve adjacent topics.
 
 ---
 
-## Future Improvements
+## 🔮 Future Improvements
 
-* Clickable YouTube timestamp links
-* Conversation memory
 * Multi-podcast support
-* Confidence scoring
+* Clickable YouTube timestamp links
 * Speaker identification
-* Advanced reranking
+* Confidence scoring
+* Conversation memory
+* Hybrid retrieval (Keyword + Semantic)
+* Cloud deployment
 
 ---
 
-## Author
+## 📄 Documentation
 
-Vaibhav Chauhan
+Project Report:
+
+```text
+docs/project_report.pdf
+```
+
+---
+
+## 👨‍💻 Author
+
+**Vaibhav Chauhan**
 
 Sportomic AI Lab Internship Assignment
+
