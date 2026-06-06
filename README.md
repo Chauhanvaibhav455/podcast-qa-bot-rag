@@ -12,13 +12,13 @@ The system extracts YouTube subtitles, converts transcript chunks into vector em
 
 ## 🏗️ System Architecture
 
-![Architecture](assets/architecture_modern.png)
+![Architecture](assests/architecture_modern.png)
 
 ---
 
 ## 📱 Application Demo
 
-![Application](assets/app_screenshot.png)
+![Application](assests/app_screenshot.png)
 
 ---
 
