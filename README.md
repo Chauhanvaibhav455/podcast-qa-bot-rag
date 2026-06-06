@@ -130,6 +130,8 @@ docs/project_report.pdf
 
 ## 👨‍💻 Author
 
+
 **Vaibhav Chauhan**
 
 Sportomic AI Lab Internship Assignment
+
