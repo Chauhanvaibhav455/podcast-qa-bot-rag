@@ -1,0 +1,8 @@
+openai-whisper
+langchain
+langchain-community
+faiss-cpu
+sentence-transformers
+streamlit
+yt-dlp
+torch
