@@ -6,6 +6,20 @@ import os
 from sentence_transformers import SentenceTransformer
 from dotenv import load_dotenv
 import google.generativeai as genai
+import re
+
+def timestamp_to_seconds(timestamp):
+    parts = timestamp.split(":")
+    
+    if len(parts) == 3:
+        h, m, s = map(int, parts)
+        return h * 3600 + m * 60 + s
+    
+    if len(parts) == 2:
+        m, s = map(int, parts)
+        return m * 60 + s
+    
+    return None
 
 # ----------------------------
 # Load Environment Variables
@@ -58,6 +72,9 @@ question = st.text_input(
 # ----------------------------
 # Search + Answer
 # ----------------------------
+# ----------------------------
+# Search + Answer
+# ----------------------------
 if question:
 
     with st.spinner("Searching podcast transcript..."):
@@ -100,6 +117,23 @@ Why this timestamp:
     st.subheader("📌 Answer")
     st.markdown(response.text)
 
+    # Extract timestamp from Gemini response
+    match = re.search(r"(\d{1,2}:\d{2}:\d{2})", response.text)
+
+    if match:
+
+        timestamp = match.group(1)
+
+        seconds = timestamp_to_seconds(timestamp)
+
+        youtube_url = (
+            f"https://youtu.be/Rni7Fz7208c?t={seconds}"
+        )
+
+        st.markdown(
+            f"### 🎥 [Open Video at {timestamp}]({youtube_url})"
+        )
+
     with st.expander("📄 View Transcript Context"):
         st.text_area(
             "",
@@ -111,4 +145,6 @@ Why this timestamp:
 # Footer
 # ----------------------------
 st.markdown("---")
-st.caption("Built using FAISS + Sentence Transformers + Gemini")
+st.caption(
+    "Built using FAISS + Sentence Transformers + Gemini"
+)
