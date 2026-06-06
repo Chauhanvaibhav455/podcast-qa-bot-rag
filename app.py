@@ -72,9 +72,6 @@ question = st.text_input(
 # ----------------------------
 # Search + Answer
 # ----------------------------
-# ----------------------------
-# Search + Answer
-# ----------------------------
 if question:
 
     with st.spinner("Searching podcast transcript..."):
